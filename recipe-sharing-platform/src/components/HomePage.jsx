@@ -18,6 +18,9 @@ function HomePage() {
   return (
     // Background and container padding
     <div className="bg-gray-50 min-h-screen p-4 sm:p-8">
+      <Link to="/add-recipe" className="p-2 bg-blue-500 text-white rounded">
+         Go to Add Recipe Form
+      </Link>
       <header className="max-w-6xl mx-auto text-center mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
           Recipe Sharing Platform
