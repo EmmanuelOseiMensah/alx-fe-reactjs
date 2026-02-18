@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 function RecipeDetail() {
+    
   const { id } = useParams(); // Grabs the "id" from the URL string
   const [recipe, setRecipe] = useState(null);
 
@@ -31,6 +32,9 @@ function RecipeDetail() {
 
   return (
     <div className="max-w-3xl mx-auto p-4 shadow-2xl">
+
+        <Link to="/" className="text-blue-500 hover:underline">Back to Home Page</Link>
+
       <h1 className="text-4xl">{recipe.title}</h1>
       <img src={recipe.image} alt={recipe.title} />
       <p>{recipe.summary}</p>
@@ -39,12 +43,12 @@ function RecipeDetail() {
       <div className="mt-6 shadow-lg p-4 rounded-lg bg-gray-100">
         <h3>Recipe Ingredients & Instructions</h3>
         <h4 className="font-bold">Ingredients:</h4>
-        <ul className="list-disc pl-5">
+        <ul className="list-disc pl-5 space-y-1">
           {recipe.ingredients.map((ingredient, index) => (
             <li key={index}>{ingredient}</li>
           ))}
         </ul>
-        
+
         <h4 className="font-bold mt-4">Instructions:</h4>
         <ol className="list-decimal pl-5">
           {recipe.instructions.map((instruction, index) => (

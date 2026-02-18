@@ -25,6 +25,24 @@
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Grilled chicken cooked in a smooth, creamy tomato-based gravy.",
-    "image": "https://via.placeholder.com/300"
+    "image": "https://via.placeholder.com/300",
+    "ingredients": [
+      "500g chicken breast",
+      "200g yogurt",
+      "2 tbsp garam masala",
+      "1 onion, chopped",
+      "3 cloves garlic, minced",
+      "1 tbsp ginger, minced",
+      "400g canned tomatoes",
+      "200ml heavy cream"
+    ],
+    "instructions": [
+      "Cut chicken breast into cubes and marinate in yogurt and garam masala for 30 minutes.",
+      "Cook the chicken in a pan until golden brown.",
+      "In the same pan, sauté onions, garlic, and ginger until fragrant.",
+      "Add canned tomatoes and simmer for 15 minutes.",
+      "Stir in heavy cream and cook for another 5 minutes.",
+      "Combine the cooked chicken with the sauce and serve hot."
+    ]   
   }
 ]
