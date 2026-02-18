@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function AddRecipeForm() {
@@ -35,6 +36,7 @@ function AddRecipeForm() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white shadow-xl rounded-lg my-10">
+      <Link to="/" className="text-blue-500 hover:underline">Back to Home Page</Link>
       <h2 className="text-3xl font-bold mb-6 text-gray-800">Add a New Recipe</h2>
       
       {errors && <p className="text-red-500 mb-4 font-medium">{errors}</p>}
