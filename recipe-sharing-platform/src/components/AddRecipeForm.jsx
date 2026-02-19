@@ -5,14 +5,14 @@ import { Link } from 'react-router-dom';
 function AddRecipeForm() {
   const [title, setTitle] = useState('');
   const [ingredients, setIngredients] = useState('');
-  const [instructions, setInstructions] = useState('');
+  const [steps, setSteps] = useState('');
   const [errors, setErrors] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents the page from refreshing
 
     // STEP 2: Validation Logic
-    if (!title || !ingredients || !instructions) {
+    if (!title || !ingredients || !steps) {
       setErrors('All fields are required!');
       return;
     }
@@ -24,12 +24,12 @@ function AddRecipeForm() {
     }
 
     // Success Logic (for now, we just log the data)
-    console.log({ title, ingredients: ingredientList, instructions });
+    console.log({ title, ingredients: ingredientList, steps });
     
     // Clear form
     setTitle('');
     setIngredients('');
-    setInstructions('');
+    setSteps('');
     setErrors('');
     alert('Recipe submitted successfully!');
   };
@@ -70,8 +70,8 @@ function AddRecipeForm() {
         <div>
           <label className="block text-gray-700 font-bold mb-2">Preparation Steps</label>
           <textarea
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
+            value={steps}
+            onChange={(e) => setSteps(e.target.value)}
             rows="6"
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
             placeholder="1. Mix ingredients...&#10;2. Bake for 30 mins..."
