@@ -8,22 +8,30 @@ function AddRecipeForm() {
   const [steps, setSteps] = useState('');
   const [errors, setErrors] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents the page from refreshing
+const handleSubmit = (e) => {
+    e.preventDefault();
 
-    // STEP 2: Validation Logic
-    if (!title || !ingredients || !steps) {
-      setErrors('All fields are required!');
-      return;
-    }
+    // created a function for validation purposes:
+    const validate = () => {
+      if (!title || !ingredients || !steps) {
+        setErrors('All fields are required!');
+        return false;
+      }
+      
+      const ingredientList = ingredients.split('\n').filter(i => i.trim() !== '');
+      if (ingredientList.length < 2) {
+        setErrors('Please include at least two ingredients (one per line).');
+        return false;
+      }
+      
+      return true;
+    };
 
+    // Calling my  validation function
+    if (!validate()) return;
+
+    // Success Logic
     const ingredientList = ingredients.split('\n').filter(i => i.trim() !== '');
-    if (ingredientList.length < 2) {
-      setErrors('Please include at least two ingredients (one per line).');
-      return;
-    }
-
-    // Success Logic (for now, we just log the data)
     console.log({ title, ingredients: ingredientList, steps });
     
     // Clear form
